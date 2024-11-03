@@ -1,162 +1,162 @@
 [
-  {
-    "product_id": "101",
-    "product_title": "Smartphone X100",
-    "product_image": "https://i.ibb.co/DYhMY6n/Smartphones.png",
-    "category": "Smartphones",
-    "price": 699.99,
-    "description": "A high-performance smartphone with advanced features and a sleek design.",
-    "Specification": [
-      "6.5-inch display",
-      "128GB storage",
-      "Triple-lens camera",
-      "5G connectivity"
-    ],
-    "availability": true,
-    "rating": 4.5
-  },
-  {
-    "product_id": "102",
-    "product_title": "Laptop Pro 15",
-    "product_image": "https://i.ibb.co/2NKLKYD/laptop.png",
-    "category": "Laptops",
-    "price": 1299.99,
-    "description": "A powerful laptop with an impressive display and top-of-the-line performance.",
-    "Specification": [
-      "15.6-inch 4K display",
-      "512GB SSD",
-      "16GB RAM",
-      "Intel i7 processor"
-    ],
-    "availability": true,
-    "rating": 4.7
-  },
-  {
-    "product_id": "103",
-    "product_title": "Noise Cancelling Headphones Z",
-    "product_image": "https://i.ibb.co/942d2rY/Audio1.png",
-    "category": "Audio",
-    "price": 199.99,
-    "description": "Premium headphones with active noise cancellation and high-quality sound.",
-    "Specification": [
-      "Over-ear design",
-      "Bluetooth 5.0",
-      "20-hour battery life",
-      "Built-in microphone"
-    ],
-    "availability": false,
-    "rating": 4.3
-  },
-  {
-    "product_id": "104",
-    "product_title": "Smartwatch S2",
-    "product_image": "https://i.ibb.co/wdLnD1V/Wearables.png",
-    "category": "Wearables",
-    "price": 249.99,
-    "description": "A stylish smartwatch with fitness tracking and notification features.",
-    "Specification": [
-      "1.4-inch AMOLED display",
-      "Heart rate monitor",
-      "GPS tracking",
-      "Water resistant"
-    ],
-    "availability": true,
-    "rating": 4.4
-  },
-  {
-    "product_id": "105",
-    "product_title": "Wireless Charger Pad",
-    "product_image": "https://i.ibb.co/ypFkLZY/Accessories1.png",
-    "category": "Accessories",
-    "price": 49.99,
-    "description": "Fast wireless charging pad compatible with a wide range of devices.",
-    "Specification": [
-      "10W fast charging",
-      "Slim design",
-      "LED indicator",
-      "Universal compatibility"
-    ],
-    "availability": true,
-    "rating": 4.1
-  },
-  {
-    "product_id": "106",
-    "product_title": "Tablet Pro 12",
-    "product_image": "https://i.ibb.co/48nqJgN/Tablets.png",
-    "category": "Tablets",
-    "price": 599.99,
-    "description": "A lightweight and powerful tablet perfect for work and play.",
-    "Specification": [
-      "12-inch Retina display",
-      "256GB storage",
-      "Stylus support",
-      "8MP rear camera"
-    ],
-    "availability": true,
-    "rating": 4.6
-  },
-  {
-    "product_id": "107",
-    "product_title": "Bluetooth Speaker Max",
-    "product_image": "https://i.ibb.co/fNQd6HH/Audio2.png",
-    "category": "Audio",
-    "price": 149.99,
-    "description": "A portable Bluetooth speaker with high-quality sound and long battery life.",
-    "Specification": [
-      "360-degree sound",
-      "24-hour battery life",
-      "Waterproof",
-      "Voice assistant support"
-    ],
-    "availability": true,
-    "rating": 4.4
-  },
-  {
-    "product_id": "108",
-    "product_title": "Gaming Mouse G5",
-    "product_image": "https://i.ibb.co/cyWnxKp/Accessories2.png",
-    "category": "Accessories",
-    "price": 79.99,
-    "description": "A responsive gaming mouse with customizable RGB lighting.",
-    "Specification": [
-      "Adjustable DPI up to 16,000",
-      "Ergonomic design",
-      "8 programmable buttons",
-      "RGB lighting"
-    ],
-    "availability": true,
-    "rating": 4.3
-  },
-  {
-    "product_id": "109",
-    "product_title": "4K Action Camera",
-    "product_image": "https://i.ibb.co/mRcTpF7/Cameras.png",
-    "category": "Cameras",
-    "price": 299.99,
-    "description": "A compact action camera with 4K video recording and image stabilization.",
-    "Specification": [
-      "4K UHD video",
-      "Waterproof up to 30m",
-      "Wi-Fi connectivity",
-      "Image stabilization"
-    ],
-    "availability": true,
-    "rating": 4.2
-  },
-  {
-    "product_id": "110",
-    "product_title": "Portable Power Bank 20,000mAh",
-    "product_image": "https://i.ibb.co/Z8RkbHd/Accessories3.png",
-    "category": "Accessories",
-    "price": 39.99,
-    "description": "A high-capacity power bank for charging multiple devices on the go.",
-    "Specification": [
-      "20,000mAh capacity",
-      "Dual USB ports",
-      "Fast charging",
-      "Compact design"
-    ],
-    "availability": true,
-    "rating": 4.5
-  }
-]
+    {
+      "product_id": "101",
+      "product_title": "Smartphone X100",
+      "product_image": "https://i.ibb.co/DYhMY6n/Smartphones.png",
+      "category": "Smartphones",
+      "price": 699.99,
+      "description": "A high-performance smartphone with advanced features and a sleek design.",
+      "Specification": [
+        "6.5-inch display",
+        "128GB storage",
+        "Triple-lens camera",
+        "5G connectivity"
+      ],
+      "availability": true,
+      "rating": 4.5
+    },
+    {
+      "product_id": "102",
+      "product_title": "Laptop Pro 15",
+      "product_image": "https://i.ibb.co/2NKLKYD/laptop.png",
+      "category": "Laptops",
+      "price": 1299.99,
+      "description": "A powerful laptop with an impressive display and top-of-the-line performance.",
+      "Specification": [
+        "15.6-inch 4K display",
+        "512GB SSD",
+        "16GB RAM",
+        "Intel i7 processor"
+      ],
+      "availability": true,
+      "rating": 4.7
+    },
+    {
+      "product_id": "103",
+      "product_title": "Noise Cancelling Headphones Z",
+      "product_image": "https://i.ibb.co/942d2rY/Audio1.png",
+      "category": "Audio",
+      "price": 199.99,
+      "description": "Premium headphones with active noise cancellation and high-quality sound.",
+      "Specification": [
+        "Over-ear design",
+        "Bluetooth 5.0",
+        "20-hour battery life",
+        "Built-in microphone"
+      ],
+      "availability": false,
+      "rating": 4.3
+    },
+    {
+      "product_id": "104",
+      "product_title": "Smartwatch S2",
+      "product_image": "https://i.ibb.co/wdLnD1V/Wearables.png",
+      "category": "Wearables",
+      "price": 249.99,
+      "description": "A stylish smartwatch with fitness tracking and notification features.",
+      "Specification": [
+        "1.4-inch AMOLED display",
+        "Heart rate monitor",
+        "GPS tracking",
+        "Water resistant"
+      ],
+      "availability": true,
+      "rating": 4.4
+    },
+    {
+      "product_id": "105",
+      "product_title": "Wireless Charger Pad",
+      "product_image": "https://i.ibb.co/ypFkLZY/Accessories1.png",
+      "category": "Accessories",
+      "price": 49.99,
+      "description": "Fast wireless charging pad compatible with a wide range of devices.",
+      "Specification": [
+        "10W fast charging",
+        "Slim design",
+        "LED indicator",
+        "Universal compatibility"
+      ],
+      "availability": true,
+      "rating": 4.1
+    },
+    {
+      "product_id": "106",
+      "product_title": "Tablet Pro 12",
+      "product_image": "https://i.ibb.co/48nqJgN/Tablets.png",
+      "category": "Tablets",
+      "price": 599.99,
+      "description": "A lightweight and powerful tablet perfect for work and play.",
+      "Specification": [
+        "12-inch Retina display",
+        "256GB storage",
+        "Stylus support",
+        "8MP rear camera"
+      ],
+      "availability": true,
+      "rating": 4.6
+    },
+    {
+      "product_id": "107",
+      "product_title": "Bluetooth Speaker Max",
+      "product_image": "https://i.ibb.co/fNQd6HH/Audio2.png",
+      "category": "Audio",
+      "price": 149.99,
+      "description": "A portable Bluetooth speaker with high-quality sound and long battery life.",
+      "Specification": [
+        "360-degree sound",
+        "24-hour battery life",
+        "Waterproof",
+        "Voice assistant support"
+      ],
+      "availability": true,
+      "rating": 4.4
+    },
+    {
+      "product_id": "108",
+      "product_title": "Gaming Mouse G5",
+      "product_image": "https://i.ibb.co/cyWnxKp/Accessories2.png",
+      "category": "Accessories",
+      "price": 79.99,
+      "description": "A responsive gaming mouse with customizable RGB lighting.",
+      "Specification": [
+        "Adjustable DPI up to 16,000",
+        "Ergonomic design",
+        "8 programmable buttons",
+        "RGB lighting"
+      ],
+      "availability": true,
+      "rating": 4.3
+    },
+    {
+      "product_id": "109",
+      "product_title": "4K Action Camera",
+      "product_image": "https://i.ibb.co/mRcTpF7/Cameras.png",
+      "category": "Cameras",
+      "price": 299.99,
+      "description": "A compact action camera with 4K video recording and image stabilization.",
+      "Specification": [
+        "4K UHD video",
+        "Waterproof up to 30m",
+        "Wi-Fi connectivity",
+        "Image stabilization"
+      ],
+      "availability": true,
+      "rating": 4.2
+    },
+    {
+      "product_id": "110",
+      "product_title": "Portable Power Bank 20,000mAh",
+      "product_image": "https://i.ibb.co/Z8RkbHd/Accessories3.png",
+      "category": "Accessories",
+      "price": 39.99,
+      "description": "A high-capacity power bank for charging multiple devices on the go.",
+      "Specification": [
+        "20,000mAh capacity",
+        "Dual USB ports",
+        "Fast charging",
+        "Compact design"
+      ],
+      "availability": true,
+      "rating": 4.5
+    }
+  ]

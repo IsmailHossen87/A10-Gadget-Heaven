@@ -1,36 +1,42 @@
 import {
-    createBrowserRouter,
-  } from "react-router-dom";
+  createBrowserRouter,
+} from "react-router-dom";
 import MainLayout from "../MainLayout/MainLayout";
 import Home from "../Home/Home";
 import Dashboard from "../DashBoard/Dashboard";
 import Statics from "../Statics/Statics";
-import CategoryCards from "../CategoryCards/CategoryCards";
+import CategoryCard from "../CategoryCard/CategoryCard";
 const routers = createBrowserRouter([
-    {
-      path: "/",
-      element: <MainLayout></MainLayout>,
-      children:[
-        {
-            path:'/',
-            element:<Home></Home>,
-            children:[
-              {
-                path:'/',
-                loader:()=> fetch('../coffees.json'),
-                element:<CategoryCards></CategoryCards>
-              },
-            ]
-        },
-        {
-            path:'/dashboard',
-            element:<Dashboard></Dashboard>
-        },
-        {
-            path:'/statics',
-            element:<Statics></Statics>
-        }
-      ]
-    },
-  ]);
-  export default routers;
+  {
+    path: "/",
+    element: <MainLayout></MainLayout>,
+    children:[
+      {
+          path:'/',
+          element:<Home></Home>,
+          loader:()=> fetch('../categoryData.json'),
+          children:[
+            {
+              path:'/',
+              loader:()=> fetch('../mainData.json'),
+              element:<CategoryCard></CategoryCard>
+            },
+            {
+              path:'/category/:category',
+              loader:()=> fetch('../mainData.json'),
+              element:<CategoryCard></CategoryCard>
+            }
+          ]
+      },
+      {
+          path:'/dashboard',
+          element:<Dashboard></Dashboard>
+      },
+      {
+          path:'/statics',
+          element:<Statics></Statics>
+      }
+    ]
+  },
+]);
+export default routers;

@@ -1,30 +1,30 @@
 [
-  {
-    "id": "1",
-    "category_name": "Smartphones"
-  },
-  {
-    "id": "2",
-    "category_name": "Laptops"
-  },
-  {
-    "id": "3",
-    "category_name": "Audio"
-  },
-  {
-    "id": "4",
-    "category_name": "Wearables"
-  },
-  {
-    "id": "5",
-    "category_name": "Accessories"
-  },
-  {
-    "id": "6",
-    "category_name": "Tablets"
-  },
-  {
-    "id": "7",
-    "category_name": "Cameras"
-  }
-]
+    {
+      "id": "1",
+      "category_name": "Smartphones"
+    },
+    {
+      "id": "2",
+      "category_name": "Laptops"
+    },
+    {
+      "id": "3",
+      "category_name": "Audio"
+    },
+    {
+      "id": "4",
+      "category_name": "Wearables"
+    },
+    {
+      "id": "5",
+      "category_name": "Accessories"
+    },
+    {
+      "id": "6",
+      "category_name": "Tablets"
+    },
+    {
+      "id": "7",
+      "category_name": "Cameras"
+    }
+  ]
