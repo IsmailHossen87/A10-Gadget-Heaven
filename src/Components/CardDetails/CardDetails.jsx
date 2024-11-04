@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
-import { saveCart } from "../Utility/dataStore";
+// import { saveCart } from "../Utility/dataStore";
 import Headingdescrip from "../HeadingDescription/Headingdescrip";
+import { CartContext } from "../../Hooks/ContExt";
 
 const CardDetails = () => {
   const { details } = useParams();
-
+  const { addToCart } = useContext(CartContext);
   const data = useLoaderData();
   const newData = data.find((id) => id.product_id === details);
   const {
@@ -19,8 +20,8 @@ const CardDetails = () => {
     product_title,
   } = newData;
   //   set data localStorage
-  const handleAddtoCard = (id) => {
-    saveCart(id);
+  const handleAddtoCart = () => {
+    addToCart(newData); // Use the context method to add item to cart
   };
 
   return (
@@ -83,12 +84,10 @@ const CardDetails = () => {
                 <div className="font-bold">{rating}</div>
               </div>
               <div className="flex gap-5">
-                <button 
-                  
-                  onClick={() => handleAddtoCard(product_id)} 
-                  
+                <button
+                  onClick={handleAddtoCart} 
                   className="border  rounded-full px-4 bg-purple-600  text-white border-purple-700 font-semibold py-1"
-                >
+                > 
                   Add to Card <i class="fa-solid fa-cart-shopping"></i>
                 </button>
                 <div className="">

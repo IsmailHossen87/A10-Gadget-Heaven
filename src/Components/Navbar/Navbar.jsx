@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {  NavLink } from "react-router-dom";
-import { getStoreCart } from "../Utility/dataStore";
+// import { getStoreCart } from "../Utility/dataStore";
+import { CartContext } from "../../Hooks/ContExt";
 
 const Navbar = () => {
- 
+  const { cartCount } = useContext(CartContext);
   const [totalData,setdata]= useState([])
-  useEffect(()=>{
-    const storeData = getStoreCart();
-    setdata(storeData)
-  },[])
+  // useEffect(()=>{
+  //   const storeData = getStoreCart();
+  //   setdata(storeData)
+  // },[])
 
   return (
     <div className="navbar max-w-screen-xl mx-auto px-8 w-full backdrop-blur-xl bg-white/30 sticky z-50 top-0">
@@ -106,7 +107,7 @@ const Navbar = () => {
       <div className="navbar-end flex gap-3">
         <div className="reletive">
            <i class="fa-solid border p-3 rounded-full bg-white fa-cart-shopping"></i>
-           <p className="absolute top-0 right-20">{totalData.length}</p>
+           <p className="absolute top-0 right-20">{cartCount}</p>
           </div>
         <div> <i class="fa-regular border p-3 rounded-full bg-white fa-heart"></i></div>
        

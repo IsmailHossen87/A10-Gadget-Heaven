@@ -1,53 +1,53 @@
-import React, { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
-import { getStoreCart } from "../Utility/dataStore";
+// Dashboard.js
+import React, { useContext, useState } from "react";
+import { CartContext } from "../../Hooks/ContExt";
 import DeshBoardCard from "../DeshBoardCard/DeshBoardCard";
 import Headingdescrip from "../HeadingDescription/Headingdescrip";
 
-const Dashboard = () => {
 
-  const data = useLoaderData();
-  const [collectData, setData] = useState(data);
-  // const [sortData,setSotData] = useState([data])
-  const handleSort =(sortBy) =>{
-    if(sortBy === "price"){
-      const sorted = [...data].sort((a,b)=> b.price - a.price)
-      setData(sorted)
-    }else if(sortBy === "rating"){
-      const sorted = [...data].sort((a,b)=> b.rating - a.rating)
-      setData(sorted)
+const Dashboard = () => {
+  const { cartItems } = useContext(CartContext);
+  const [sortBy, setSortBy] = useState(null); // State to track sorting option
+
+  // Sort function
+  const sortedCartItems = [...cartItems].sort((a, b) => {
+    if (sortBy === "price") {
+      return b.price - a.price; // Sort by price in descending order
     }
-  }
-  useEffect(() => {
-    const storeCard = getStoreCart();
-    const readCard = data?.filter((card) =>
-      storeCard.includes(card.product_id)
-    );
-    setData(readCard);
-  }, [data]);
+    if (sortBy === "rating") {
+      return b.rating - a.rating; // Sort by rating in descending order
+    }
+    return 0;
+  });
+
   return (
-    <>
-      <div>
-        <Headingdescrip
-          title="Dashboard"
-          subtitle="Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!"
-        ></Headingdescrip>
-        <div className="container flex justify-between px-3">
-          <div>
-            <h3 className="font-bold">Cart : {collectData.length}</h3>
-          </div>
-          {/* show 3 category */}
-          <div className="flex items-center space-x-8">
-            <h3 className="font-bold mr-6">Total Cost : </h3>
-            <button onClick={()=>handleSort('price')} className="btn btn-warning">Sort by Price</button>
-            <button onClick={()=>handleSort('rating')} className="btn btn-warning">Sort by Rating</button>
-          </div>
+    <div>
+      <Headingdescrip
+        title="Dashboard"
+        subtitle="Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!"
+      />
+      <div className="container flex justify-between px-3">
+        <h3 className="font-bold">Cart: {cartItems.length}</h3>
+        <div className="flex space-x-4">
+          <button onClick={() => setSortBy("price")} className="btn btn-warning">
+            Sort by Price
+          </button>
+          <button onClick={() => setSortBy("rating")} className="btn btn-warning">
+            Sort by Rating
+          </button>
         </div>
-        {collectData.map((card) => (
-          <DeshBoardCard card={card}></DeshBoardCard>
-        ))}
       </div>
-    </>
+
+      {/* Empty state message */}
+      {sortedCartItems.length === 0 ? (
+        <div className="flex flex-col items-center mt-10">
+      
+          <p className="text-xl font-semibold text-gray-500">No data available</p>
+        </div>
+      ) : (
+        sortedCartItems.map((card) => <DeshBoardCard key={card.product_id} card={card} />)
+      )}
+    </div>
   );
 };
 
