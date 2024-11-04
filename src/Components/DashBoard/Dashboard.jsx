@@ -5,10 +5,19 @@ import DeshBoardCard from "../DeshBoardCard/DeshBoardCard";
 import Headingdescrip from "../HeadingDescription/Headingdescrip";
 
 const Dashboard = () => {
-  const [collectData, setData] = useState([]);
-  console.log(collectData);
-  const data = useLoaderData();
 
+  const data = useLoaderData();
+  const [collectData, setData] = useState(data);
+  // const [sortData,setSotData] = useState([data])
+  const handleSort =(sortBy) =>{
+    if(sortBy === "price"){
+      const sorted = [...data].sort((a,b)=> b.price - a.price)
+      setData(sorted)
+    }else if(sortBy === "rating"){
+      const sorted = [...data].sort((a,b)=> b.rating - a.rating)
+      setData(sorted)
+    }
+  }
   useEffect(() => {
     const storeCard = getStoreCart();
     const readCard = data?.filter((card) =>
@@ -30,8 +39,8 @@ const Dashboard = () => {
           {/* show 3 category */}
           <div className="flex items-center space-x-8">
             <h3 className="font-bold mr-6">Total Cost : </h3>
-            <button className="btn btn-warning">Sort by Price</button>
-            <button className="btn btn-warning">Sort by Price</button>
+            <button onClick={()=>handleSort('price')} className="btn btn-warning">Sort by Price</button>
+            <button onClick={()=>handleSort('rating')} className="btn btn-warning">Sort by Rating</button>
           </div>
         </div>
         {collectData.map((card) => (

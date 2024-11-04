@@ -83,8 +83,10 @@ const CardDetails = () => {
                 <div className="font-bold">{rating}</div>
               </div>
               <div className="flex gap-5">
-                <button
-                  onClick={() => handleAddtoCard(product_id)}
+                <button 
+                  
+                  onClick={() => handleAddtoCard(product_id)} 
+                  
                   className="border  rounded-full px-4 bg-purple-600  text-white border-purple-700 font-semibold py-1"
                 >
                   Add to Card <i class="fa-solid fa-cart-shopping"></i>

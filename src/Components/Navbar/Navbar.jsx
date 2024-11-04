@@ -10,7 +10,6 @@ const Navbar = () => {
     setdata(storeData)
   },[])
 
-
   return (
     <div className="navbar max-w-screen-xl mx-auto px-8 w-full backdrop-blur-xl bg-white/30 sticky z-50 top-0">
       <div className="navbar-start">
