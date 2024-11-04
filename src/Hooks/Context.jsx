@@ -27,11 +27,16 @@ export const CartProvider = ({ children }) => {
             alert("Product added successfully!");  
         }
     };
+    const removeFromCart = (id) => {
+        const updatedCart = cartItems.filter(item => item.product_id !== id);
+        setCartItems(updatedCart);
+        localStorage.setItem('cart', JSON.stringify(updatedCart)); 
+    };
 
     const cartCount = cartItems.length;
 
     return (
-        <CartContext.Provider value={{ cartItems, addToCart, cartCount }}>
+        <CartContext.Provider value={{ cartItems, addToCart, cartCount ,removeFromCart }}>
             {children}
         </CartContext.Provider>
     );
