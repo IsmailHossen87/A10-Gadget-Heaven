@@ -16,22 +16,6 @@
       "rating": 4.5
     },
     {
-      "product_id": "102",
-      "product_title": "Laptop Pro 15",
-      "product_image": "https://i.ibb.co/2NKLKYD/laptop.png",
-      "category": "Laptops",
-      "price": 1299.99,
-      "description": "A powerful laptop with an impressive display and top-of-the-line performance.",
-      "Specification": [
-        "15.6-inch 4K display",
-        "512GB SSD",
-        "16GB RAM",
-        "Intel i7 processor"
-      ],
-      "availability": true,
-      "rating": 4.7
-    },
-    {
       "product_id": "103",
       "product_title": "Noise Cancelling Headphones Z",
       "product_image": "https://i.ibb.co/942d2rY/Audio1.png",
@@ -158,5 +142,20 @@
       ],
       "availability": true,
       "rating": 4.5
+    },{
+      "product_id": "102",
+      "product_title": "Laptop Pro 15",
+      "product_image": "https://i.ibb.co/2NKLKYD/laptop.png",
+      "category": "Laptops",
+      "price": 1299.99,
+      "description": "A powerful laptop with an impressive display and top-of-the-line performance.",
+      "Specification": [
+        "15.6-inch 4K display",
+        "512GB SSD",
+        "16GB RAM",
+        "Intel i7 processor"
+      ],
+      "availability": true,
+      "rating": 4.7
     }
   ]
