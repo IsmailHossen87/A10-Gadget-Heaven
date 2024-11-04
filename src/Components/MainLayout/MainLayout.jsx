@@ -7,10 +7,10 @@ const MainLayout = () => {
     return (
         <div className=''>
            <Navbar></Navbar>
-            <div className='min-h-[calc(100vh-300px)] container py-12 mx-auto '>
+            <div className='max-w-screen-xl mx-auto '>
             <Outlet></Outlet>
             </div>
-            <div className=''><Footer></Footer></div>
+            <Footer></Footer>
         </div>
     );
 };

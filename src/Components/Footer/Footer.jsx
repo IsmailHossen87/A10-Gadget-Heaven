@@ -9,7 +9,7 @@ const Footer = () => {
             <hr />         
         </div>
     
-    <footer className="flex justify-evenly mx-auto my-5">
+    <footer className="flex justify-evenly max-w-screen-xl mx-auto my-5">
       <nav className="flex flex-col">
         <h6 className="font-semibold text-xl mb-2">Services</h6>
         <a className="link link-hover">Product Support</a>

@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {  NavLink } from "react-router-dom";
+import { getStoreCart } from "../Utility/dataStore";
 
 const Navbar = () => {
+ 
+  const [totalData,setdata]= useState([])
+  useEffect(()=>{
+    const storeData = getStoreCart();
+    setdata(storeData)
+  },[])
+
 
   return (
-    <div className="navbar container mx-auto px-8 w-full backdrop-blur-xl bg-white/30 sticky z-50 top-0">
+    <div className="navbar max-w-screen-xl mx-auto px-8 w-full backdrop-blur-xl bg-white/30 sticky z-50 top-0">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -97,7 +105,10 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end flex gap-3">
-        <div> <i class="fa-solid border p-3 rounded-full bg-white fa-cart-shopping"></i></div>
+        <div className="reletive">
+           <i class="fa-solid border p-3 rounded-full bg-white fa-cart-shopping"></i>
+           <p className="absolute top-0 right-20">{totalData.length}</p>
+          </div>
         <div> <i class="fa-regular border p-3 rounded-full bg-white fa-heart"></i></div>
        
       </div>

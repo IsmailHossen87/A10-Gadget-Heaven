@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { getStoreCart } from "../Utility/dataStore";
 import DeshBoardCard from "../DeshBoardCard/DeshBoardCard";
+import Headingdescrip from "../HeadingDescription/Headingdescrip";
 
 const Dashboard = () => {
   const [collectData, setData] = useState([]);
@@ -10,12 +11,18 @@ const Dashboard = () => {
 
   useEffect(() => {
     const storeCard = getStoreCart();
-    const readCard = data?.filter((card) => storeCard.includes(card.product_id));
+    const readCard = data?.filter((card) =>
+      storeCard.includes(card.product_id)
+    );
     setData(readCard);
   }, [data]);
   return (
     <>
       <div>
+        <Headingdescrip
+          title="Dashboard"
+          subtitle="Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!"
+        ></Headingdescrip>
         <div className="container flex justify-between px-3">
           <div>
             <h3 className="font-bold">Cart : {collectData.length}</h3>
@@ -27,9 +34,9 @@ const Dashboard = () => {
             <button className="btn btn-warning">Sort by Price</button>
           </div>
         </div>
-        {
-          collectData.map(card => <DeshBoardCard card={card}></DeshBoardCard>)
-        }
+        {collectData.map((card) => (
+          <DeshBoardCard card={card}></DeshBoardCard>
+        ))}
       </div>
     </>
   );
