@@ -96,8 +96,8 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end flex gap-3">
-        <div className="border p-2 rounded-full bg-white"> <i class="fa-solid fa-cart-shopping"></i></div>
-        <div className="border p-2 rounded-full bg-white"> <i class="fa-regular fa-heart"></i></div>
+        <div> <i class="fa-solid border p-3 rounded-full bg-white fa-cart-shopping"></i></div>
+        <div> <i class="fa-regular border p-3 rounded-full bg-white fa-heart"></i></div>
        
       </div>
     </div>

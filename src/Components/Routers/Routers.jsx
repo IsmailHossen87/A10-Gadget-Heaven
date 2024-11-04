@@ -6,6 +6,7 @@ import Home from "../Home/Home";
 import Dashboard from "../DashBoard/Dashboard";
 import Statics from "../Statics/Statics";
 import CategoryCard from "../CategoryCard/CategoryCard";
+import CardDetails from "../CardDetails/CardDetails";
 const routers = createBrowserRouter([
   {
     path: "/",
@@ -30,7 +31,13 @@ const routers = createBrowserRouter([
           ]
       },
       {
+        path:'/cardDetails/:details',
+        loader:()=> fetch('mainData.json'),
+        element:<CardDetails></CardDetails>
+      },
+      {
           path:'/dashboard',
+          loader:()=> fetch('mainData.json'),
           element:<Dashboard></Dashboard>
       },
       {

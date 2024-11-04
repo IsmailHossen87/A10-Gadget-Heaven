@@ -2,10 +2,10 @@ import React from 'react';
 import { NavLink, useLoaderData } from 'react-router-dom';
 
 const Category = () => {
-  const categorys = useLoaderData()
+  const category = useLoaderData()
     return (
         <div role="tablist" className="flex flex-col rounded-md gap-3 my-4 py-4 border w-[20%]">
-          {categorys.map((data) => (
+          {category.map((data) => (
             <NavLink
               to={`/category/${data.category_name}`}
               role="tab"

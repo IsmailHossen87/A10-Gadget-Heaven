@@ -5,14 +5,15 @@ import Cards from '../Cards/Cards';
 const CategoryCard = () => {
     const datas = useLoaderData()
     const {category} = useParams()
-    // const maindata = datas.filter(data => data.category === category)
-    const [coffees,setCoffes]= useState([])
+    // console.log("datas",datas ,"category",category)
+
+    const [allCards,setAllcard]= useState([])
     useEffect(()=>{
        if(category){
-        const storeCoffe = [...datas].filter(data => data.category === category)
-        setCoffes(storeCoffe)
+        const storecard= [...datas].filter(data => data.category_name === category)
+        setAllcard(storecard)
        }else{
-        setCoffes(datas.slice(0,6))
+        setAllcard(datas.slice(0,6))
        }
     },[datas,category])
     return (
@@ -20,7 +21,7 @@ const CategoryCard = () => {
         <div className='container mx-auto'>
             <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-4'>
                 {
-                    coffees.map(data => <Cards data={data}></Cards>)
+                    allCards.map(data => <Cards data={data}></Cards>)
                 }
             </div>
         </div>
