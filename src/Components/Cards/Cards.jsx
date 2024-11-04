@@ -12,7 +12,7 @@ const Cards = ({ data }) => {
         <div className="card-body">
           <h2 className="card-title font-bold text-xl">{category_name}</h2>
           <p className="card-title">{price}</p>
-          <Link to={`cardDetails/${product_id}`}>
+          <Link to={`/cardDetails/${product_id}`}>
           <button className=" border-2 w-36  rounded-full  text-purple-600  bg-gradient-to-r  font-semibold py-1">
             View Details
           </button></Link>

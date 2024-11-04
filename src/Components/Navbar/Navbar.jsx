@@ -1,7 +1,8 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
 
 const Navbar = () => {
+
   return (
     <div className="navbar container mx-auto px-8 w-full backdrop-blur-xl bg-white/30 sticky z-50 top-0">
       <div className="navbar-start">
@@ -28,7 +29,7 @@ const Navbar = () => {
           >
             <NavLink
               className={({ isActive }) =>
-                `font-bold ${isActive ? "text-warning font-bold " : ""}`
+                `font-bold ${isActive ? "text-warning font-bold underline" : ""}`
               }
               to={"/"}
             >
@@ -36,7 +37,7 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               className={({ isActive }) =>
-                `font-bold ${isActive ? "text-warning font-bold" : ""}`
+                `font-bold ${isActive ? "text-warning font-bold underline" : ""}`
               }
               to={"/statics"}
             >
@@ -44,7 +45,7 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               className={({ isActive }) =>
-                `font-bold ${isActive ? "text-warning font-bold" : ""}`
+                `font-bold ${isActive ? "text-warning font-bold underline" : ""}`
               }
               to={"/dashboard"}
             >
@@ -66,7 +67,7 @@ const Navbar = () => {
           <NavLink
             className={({ isActive }) =>
               `mr-4 font-bold ${
-                isActive ? "text-warning font-bold " : ""
+                isActive ? "text-warning font-bold underline" : ""
               }`
             }
             to={"/"}
@@ -76,7 +77,7 @@ const Navbar = () => {
           <NavLink
             className={({ isActive }) =>
               `mr-4 font-bold ${
-                isActive ? "text-warning font-bold " : ""
+                isActive ? "text-warning font-bold underline " : ""
               }`
             }
             to={"/statics"}
@@ -86,7 +87,7 @@ const Navbar = () => {
           <NavLink
             className={({ isActive }) =>
               `mr-4 font-bold ${
-                isActive ? "text-warning font-bold " : ""
+                isActive ? "text-warning font-bold underline" : ""
               }`
             }
             to={"/dashboard"}

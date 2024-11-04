@@ -14,30 +14,30 @@ const routers = createBrowserRouter([
     children:[
       {
           path:'/',
-          loader:()=> fetch('../categoryData.json'),
+          loader:()=> fetch('/categoryData.json'),
           element:<Home></Home>,
          
           children:[
             {
               path:'/',
-              loader:()=> fetch('../mainData.json'),
+              loader:()=> fetch('/mainData.json'),
               element:<CategoryCard></CategoryCard>
             },
             {
               path:'/category/:category',
-              loader:()=> fetch('../mainData.json'),
+              loader:()=> fetch('/mainData.json'),
               element:<CategoryCard></CategoryCard>
             }
           ]
       },
       {
         path:'/cardDetails/:details',
-        loader:()=> fetch('mainData.json'),
+        loader:()=> fetch('/mainData.json'),
         element:<CardDetails></CardDetails>
       },
       {
           path:'/dashboard',
-          loader:()=> fetch('mainData.json'),
+          loader:()=> fetch('/mainData.json'),
           element:<Dashboard></Dashboard>
       },
       {
