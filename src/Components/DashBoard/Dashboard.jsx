@@ -2,16 +2,17 @@ import React, { useContext, useState } from "react";
 import { CartContext } from "../../Hooks/ContExt";
 import DeshBoardCard from "../DeshBoardCard/DeshBoardCard";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Dashboard = () => {
-  const { cartItems, wishlistitem } = useContext(CartContext);
+  const { cartItems, wishlistitem, clearLocalStorage, clearLocalStorageWish } =
+    useContext(CartContext);
   const [sortBy, setSortBy] = useState(null);
-  const [view, setView] = useState("cart"); // New state for toggling view
-  // Sort function
+  const [view, setView] = useState("cart");
 
-  // টাকা বের করার জন্য
+// টাকা বের করার জন্য and   // Sort function
   const totalAmountCart = cartItems.reduce((acc, item) => acc + item.price, 0);
-  const totalAmountWishList = cartItems.reduce(
+  const totalAmountWishList = wishlistitem.reduce(
     (acc, item) => acc + item.price,
     0
   );
@@ -28,6 +29,18 @@ const Dashboard = () => {
     }
   );
 
+
+  const handlePurchaseClick = () => {
+  // যদি ডাটা না থাকে তাহলে মডাল দখাবে না
+    if (cartItems.length === 0 && wishlistitem.length === 0) {
+      toast.warning('No items in cart or wishlist to purchase!"',{
+        position:'top-center',
+        autoClose:1200
+      })
+    } else {
+      my_modal_1.showModal(); 
+    }
+  };
   return (
     <div>
       {/* Heading Description */}
@@ -86,12 +99,16 @@ const Dashboard = () => {
           >
             Sort by Rating
           </button>
-          {/* Modal start */}
 
+          
+          {/* Modal start */}
           <dialog id="my_modal_1" className="modal">
             <div className="modal-box">
               <h3 className="font-bold text-2xl">Payment Successfully</h3>
-             <div className="w-2/3 mx-auto my-2"> <hr /></div>
+              <div className="w-2/3 mx-auto my-2">
+                {" "}
+                <hr />
+              </div>
               <div className="mt-4">
                 <p>Thanks for Purchasing</p>
                 {view === "cart"
@@ -101,7 +118,21 @@ const Dashboard = () => {
               <div className="modal-action">
                 <form method="dialog">
                   {/* close the modal */}
-                  <Link to={'/'}><button className="btn w-full">Close</button></Link>
+                  <Link to={"/"}>
+                    {" "}
+                    <button
+                      onClick={() => {
+                        if (view === "cart") {
+                          clearLocalStorage();
+                        } else {
+                          clearLocalStorageWish();
+                        }
+                      }}
+                      className="btn w-full"
+                    >
+                      Close
+                    </button>
+                  </Link>
                 </form>
               </div>
             </div>
@@ -109,9 +140,9 @@ const Dashboard = () => {
 
           {/* modal end */}
 
-          {/* Purchase Part */}
+{/* purchase বাটনে click korle কিছু হবে */}
           <button
-            onClick={() => my_modal_1.showModal()}
+            onClick={handlePurchaseClick}
             className="border rounded-full px-4 bg-white text-purple-600 border-purple-700 font-semibold py-1"
           >
             Purchase
@@ -119,7 +150,7 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* Conditional rendering based on the view */}
+      {/* Conditional rendering */}
       {sortedItems.length === 0 ? (
         <div className="flex flex-col items-center mt-10">
           <p className="text-xl font-semibold text-gray-500">
@@ -136,98 +167,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
-// // Dashboard.js
-// import React, { useContext, useState } from "react";
-// import { CartContext } from "../../Hooks/ContExt";
-// import DeshBoardCard from "../DeshBoardCard/DeshBoardCard";
-// import Headingdescrip from "../HeadingDescription/Headingdescrip";
-// import { Link } from "react-router-dom";
-// import Showcard from "../showCard/Showcard";
-
-// const Dashboard = () => {
-//   const { cartItems, wishlistitem } = useContext(CartContext);
-//   const [sortBy, setSortBy] = useState(null);
-//   // Sort function
-//   const sortedCartItems = [...cartItems].sort((a, b) => {
-//     if (sortBy === "price") {
-//       return b.price - a.price;
-//     }
-//     if (sortBy === "rating") {
-//       return b.rating - a.rating;
-//     }
-//     return 0;
-//   });
-
-//   return (
-//     <div>
-//       {/* Heading Description */}
-//       <div className="bg-purple-500 max-w-screen-xl mx-auto rounded-xl">
-//         <div className="text-center md:w-2/3 mx-auto space-y-4 py-9 ">
-//           <h2 className="text-4xl font-semibold text-white">Dashboard</h2>
-//           <h2 className="md:w-2/3 mx-auto text-gray-200">
-//             Explore the latest gadgets that will take your experience to the
-//             next level. From smart devices to the coolest accessories, we have
-//             it all!
-//           </h2>
-//           <div className="flex gap-5 justify-center">
-//             {/* এখানে ২ টা বাটন রাখব */}
-//             <div className="flex gap-4 items-center">
-
-//                 <button
-//                   className="border   rounded-full px-4 bg-white  mt-4  text-purple-600 border-purple-700 font-semibold py-1"
-//                 >
-//                   Card
-//                 </button>
-//               <button className="border  rounded-full px-4 bg-white  mt-4  text-purple-600 border-purple-700 font-semibold py-1">
-//                 WishList
-//               </button>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//       {/* end */}
-//       <div className="container flex justify-between px-3">
-//         <h3 className="font-bold">Cart: {cartItems.length}</h3>
-//         <div className="flex space-x-4">
-//           <button
-//             onClick={() => setSortBy("price")}
-//             className="btn btn-warning"
-//           >
-//             Sort by Price
-//           </button>
-//           <button
-//             onClick={() => setSortBy("rating")}
-//             className="btn btn-warning"
-//           >
-//             Sort by Rating
-//           </button>
-//         </div>
-//       </div>
-
-//       {/* Empty state message */}
-
-//       {sortedCartItems.length === 0 ? (
-//         <div className="flex flex-col items-center mt-10">
-//           <p className="text-xl font-semibold text-gray-500">
-//             No data available
-//           </p>
-//         </div>
-//       ) : (
-//         sortedCartItems.map((card) => (
-//           <DeshBoardCard key={card.product_id} card={card} />
-//         ))
-//       )}
-
-//       {wishlistitem.length === 0 ? (
-//         <div className="flex flex-col items-center mt-10"></div>
-//       ) : (
-//         wishlistitem.map((card) => (
-//           <DeshBoardCard key={card.product_id} card={card} />
-//         ))
-//       )}
-//     </div>
-//   );
-// };
-
-// export default Dashboard;

@@ -2,9 +2,16 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../Hooks/ContExt";
 
-const DeshBoardCard = ({ card,view }) => {
-  const { removeFromCart,removeFromwish } = useContext(CartContext);
-  const { category_name, product_id, product_image, description, price, rating } = card;
+const DeshBoardCard = ({ card, view }) => {
+  const { removeFromCart, removeFromwish } = useContext(CartContext);
+  const {
+    category_name,
+    product_id,
+    product_image,
+    description,
+    price,
+    rating,
+  } = card;
 
   return (
     <div className="flex mb-7 bg-slate-100 w-2/3 mx-auto rounded-lg py-4 justify-between">
@@ -18,13 +25,15 @@ const DeshBoardCard = ({ card,view }) => {
         </div>
       </div>
       <div className="mr-2">
-        <button onClick={() => {
-          if(view == 'cart'){
-            removeFromCart(product_id); 
-          }else{
-            removeFromwish(product_id)
-          }
-        }}>
+        <button
+          onClick={() => {
+            if (view == "cart") {
+              removeFromCart(product_id);
+            } else {
+              removeFromwish(product_id);
+            }
+          }}
+        >
           <i className="fa-solid p-3 rounded-full bg-gray-300 fa-delete-left"></i>
         </button>
       </div>

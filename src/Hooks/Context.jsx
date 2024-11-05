@@ -10,11 +10,22 @@ export const CartProvider = ({ children }) => {
         const storedCart = localStorage.getItem('cartItems');
         return storedCart ? JSON.parse(storedCart) : [];
     });
+  
     // Local storage e wishList  store korar jonno
     const [wishlistitem, setWishlistItem] = useState(() => {
         const storedWishList = localStorage.getItem('wishList');
         return storedWishList ? JSON.parse(storedWishList) : [];
     });
+//    local Storage empty 
+const clearLocalStorage = () => {
+    localStorage.clear();
+    setCartItems([]);     
+};
+const clearLocalStorageWish = () => {
+    localStorage.clear();
+    setWishlistItem([]);    
+};
+
     useEffect(() => {
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
     }, [cartItems]);
@@ -71,7 +82,7 @@ export const CartProvider = ({ children }) => {
     const wishListCount = wishlistitem.length;
 
     return (
-        <CartContext.Provider value={{ cartItems,wishListCount, wishlistitem, addToCart, addToWishList, cartCount, removeFromCart,removeFromwish}}>
+        <CartContext.Provider value={{ cartItems,wishListCount, wishlistitem, addToCart, addToWishList, cartCount, removeFromCart,removeFromwish,clearLocalStorage,clearLocalStorageWish}}>
             {children}
         </CartContext.Provider>
     );
