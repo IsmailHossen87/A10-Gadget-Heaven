@@ -1,14 +1,21 @@
 import React, { useContext, useState } from "react";
 import { CartContext } from "../../Hooks/ContExt";
 import DeshBoardCard from "../DeshBoardCard/DeshBoardCard";
-
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   const { cartItems, wishlistitem } = useContext(CartContext);
   const [sortBy, setSortBy] = useState(null);
   const [view, setView] = useState("cart"); // New state for toggling view
-console.log(wishlistitem,view)
   // Sort function
+
+  // টাকা বের করার জন্য
+  const totalAmountCart = cartItems.reduce((acc, item) => acc + item.price, 0);
+  const totalAmountWishList = cartItems.reduce(
+    (acc, item) => acc + item.price,
+    0
+  );
+
   const sortedItems = [...(view === "cart" ? cartItems : wishlistitem)].sort(
     (a, b) => {
       if (sortBy === "price") {
@@ -36,7 +43,7 @@ console.log(wishlistitem,view)
             <div className="flex gap-4 items-center">
               <button
                 onClick={() => setView("cart")}
-                className={`border border-white rounded-full px-4 bg-purple-500 mt-4 text-white  font-semibold py-1 ${
+                className={`border border-white rounded-full px-4 bg-purple-500 mt-4 text-black  font-semibold py-1 ${
                   view === "cart" ? "bg-white text-black" : ""
                 }`}
               >
@@ -44,7 +51,7 @@ console.log(wishlistitem,view)
               </button>
               <button
                 onClick={() => setView("wishlist")}
-                className={`border rounded-full px-4 bg-purple-500 mt-4 text-white border-white font-semibold py-1 ${
+                className={`border rounded-full px-4 bg-purple-500 mt-4 text-black border-white font-semibold py-1 ${
                   view === "wishlist" ? "bg-white text-black" : "bg-purple-500"
                 }`}
               >
@@ -54,12 +61,19 @@ console.log(wishlistitem,view)
           </div>
         </div>
       </div>
-      
-      <div className="container flex justify-between px-3">
-        <h3 className="font-bold">
-          {view === "cart" ? `Cart: ${cartItems.length}` : `Wishlist: ${wishlistitem.length}`}
+
+      <div className="container flex py-3 items-center  justify-between px-3 mt-5">
+        <h3 className="font-bold text-xl">
+          {view === "cart"
+            ? `Cart: ${cartItems.length}`
+            : `Wishlist: ${wishlistitem.length}`}
         </h3>
-        <div className="flex space-x-4">
+        <div className="font-bold text-xl">
+          {view === "cart"
+            ? `Total Amount : ${totalAmountCart}`
+            : `Total Amount : ${totalAmountWishList}`}
+        </div>
+        <div className="flex space-x-4 justify-center">
           <button
             onClick={() => setSortBy("price")}
             className="btn btn-warning"
@@ -71,6 +85,36 @@ console.log(wishlistitem,view)
             className="btn btn-warning"
           >
             Sort by Rating
+          </button>
+          {/* Modal start */}
+
+          <dialog id="my_modal_1" className="modal">
+            <div className="modal-box">
+              <h3 className="font-bold text-2xl">Payment Successfully</h3>
+             <div className="w-2/3 mx-auto my-2"> <hr /></div>
+              <div className="mt-4">
+                <p>Thanks for Purchasing</p>
+                {view === "cart"
+                  ? `Total: ${totalAmountCart}`
+                  : `Total: ${totalAmountWishList}`}
+              </div>
+              <div className="modal-action">
+                <form method="dialog">
+                  {/* close the modal */}
+                  <Link to={'/'}><button className="btn w-full">Close</button></Link>
+                </form>
+              </div>
+            </div>
+          </dialog>
+
+          {/* modal end */}
+
+          {/* Purchase Part */}
+          <button
+            onClick={() => my_modal_1.showModal()}
+            className="border rounded-full px-4 bg-white text-purple-600 border-purple-700 font-semibold py-1"
+          >
+            Purchase
           </button>
         </div>
       </div>
@@ -92,19 +136,6 @@ console.log(wishlistitem,view)
 };
 
 export default Dashboard;
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // // Dashboard.js
 // import React, { useContext, useState } from "react";
@@ -142,7 +173,7 @@ export default Dashboard;
 //           <div className="flex gap-5 justify-center">
 //             {/* এখানে ২ টা বাটন রাখব */}
 //             <div className="flex gap-4 items-center">
-              
+
 //                 <button
 //                   className="border   rounded-full px-4 bg-white  mt-4  text-purple-600 border-purple-700 font-semibold py-1"
 //                 >

@@ -7,8 +7,8 @@ const DeshBoardCard = ({ card,view }) => {
   const { category_name, product_id, product_image, description, price, rating } = card;
 
   return (
-    <div className="flex my-7 bg-slate-100 w-2/3 mx-auto rounded-lg py-4 justify-between">
-      <div className="flex gap-4">
+    <div className="flex mb-7 bg-slate-100 w-2/3 mx-auto rounded-lg py-4 justify-between">
+      <div className="flex gap-7 text-start">
         <img className="h-[100px] w-[100px]" src={product_image} alt="" />
         <div>
           <h3 className="font-bold">{category_name}</h3>
