@@ -4,8 +4,8 @@ import {  NavLink } from "react-router-dom";
 import { CartContext } from "../../Hooks/ContExt";
 
 const Navbar = () => {
-  const { cartCount } = useContext(CartContext);
-  const [totalData,setdata]= useState([])
+  const { cartCount ,wishListCount} = useContext(CartContext);
+  // const [totalData,setdata]= useState([])
   // useEffect(()=>{
   //   const storeData = getStoreCart();
   //   setdata(storeData)
@@ -107,9 +107,12 @@ const Navbar = () => {
       <div className="navbar-end flex gap-3">
         <div className="reletive">
            <i class="fa-solid border p-3 rounded-full bg-white fa-cart-shopping"></i>
-           <p className="absolute top-0 right-20">{cartCount}</p>
+           <p className="absolute -top-4 right-20 border-2 p-1 rounded-full border-red-500">{cartCount}</p>
           </div>
-        <div> <i class="fa-regular border p-3 rounded-full bg-white fa-heart"></i></div>
+        <div className="relatibe"> 
+          <i class="fa-regular border p-3 rounded-full bg-white fa-heart"></i>
+          <p className="absolute -top-4 right-7 border-2 p-1 rounded-full border-red-500">{wishListCount}</p>
+          </div>
        
       </div>
     </div>

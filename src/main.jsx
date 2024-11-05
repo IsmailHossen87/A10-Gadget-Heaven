@@ -5,10 +5,12 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import routers from './Components/Routers/Routers'
+import { CartProvider } from './Hooks/ContExt';
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={routers} />
+    <CartProvider >  <RouterProvider router={routers} /></CartProvider>
+   
   </StrictMode>,
 )

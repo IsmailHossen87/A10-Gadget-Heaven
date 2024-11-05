@@ -2,8 +2,8 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../Hooks/ContExt";
 
-const DeshBoardCard = ({ card }) => {
-  const { removeFromCart } = useContext(CartContext);
+const DeshBoardCard = ({ card,view }) => {
+  const { removeFromCart,removeFromwish } = useContext(CartContext);
   const { category_name, product_id, product_image, description, price, rating } = card;
 
   return (
@@ -18,7 +18,13 @@ const DeshBoardCard = ({ card }) => {
         </div>
       </div>
       <div className="mr-2">
-        <button onClick={() => removeFromCart(product_id)}>
+        <button onClick={() => {
+          if(view == 'cart'){
+            removeFromCart(product_id); 
+          }else{
+            removeFromwish(product_id)
+          }
+        }}>
           <i className="fa-solid p-3 rounded-full bg-gray-300 fa-delete-left"></i>
         </button>
       </div>
