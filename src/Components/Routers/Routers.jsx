@@ -8,6 +8,7 @@ import Statics from "../Statics/Statics";
 import CategoryCard from "../CategoryCard/CategoryCard";
 import CardDetails from "../CardDetails/CardDetails";
 import Error from "../Error/Error";
+import Contract from "../Login/Login";
 const routers = createBrowserRouter([
   {
     path: "/",
@@ -45,6 +46,10 @@ const routers = createBrowserRouter([
           path:'/statics',
           loader:()=> fetch('/mainData.json'),
           element:<Statics></Statics>
+      },
+      {
+          path:'/login',
+          element:<Contract></Contract>
       },
     ]
   },

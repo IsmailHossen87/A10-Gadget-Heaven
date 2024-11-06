@@ -1,6 +1,7 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 import "../../App.css";
+import { Helmet } from "react-helmet";
 import {
   BarChart,
   Bar,
@@ -36,6 +37,10 @@ function GrapPages() {
   const data = useLoaderData();
   return (
     <div>
+        <Helmet>
+        <title>Static</title>
+        <meta name="description" content="Helmet application" />
+      </Helmet>
       <div className="bg-purple-500 max-w-screen-xl mx-auto rounded-xl">
         <div className="text-center md:w-2/3 mx-auto space-y-4 py-9 ">
           <h2 className="text-4xl font-semibold text-white">Subtitle</h2>

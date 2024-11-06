@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const HeadingTitle = ({ title, subtitle }) => {
   return (
     <>
-      <div className="bg-purple-500 max-w-screen-xl mx-auto rounded-xl">
+      <div className="bg-purple-500 max-w-screen-xl -mt-3 mx-auto rounded-xl">
         <div className="text-center md:w-2/3 mx-auto space-y-4 py-9 ">
           <h2 className="text-4xl font-semibold text-white">{title}</h2>
           <h2 className="md:w-2/3 mx-auto text-gray-200">{subtitle}</h2>

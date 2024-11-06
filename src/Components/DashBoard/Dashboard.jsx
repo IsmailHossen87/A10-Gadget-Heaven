@@ -4,6 +4,8 @@ import DeshBoardCard from "../DeshBoardCard/DeshBoardCard";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import modalImage from '../../assets/Group.png';
+import { Helmet } from "react-helmet"
+
 
 const Dashboard = () => {
   const { cartItems, wishlistitem, clearLocalStorage, clearLocalStorageWish } =
@@ -12,11 +14,10 @@ const Dashboard = () => {
   const [view, setView] = useState("cart");
 
   // টাকা বের করার জন্য and   // Sort function
-  const totalAmountCart = cartItems.reduce((acc, item) => acc + item.price, 0);
-  const totalAmountWishList = wishlistitem.reduce(
-    (acc, item) => acc + item.price,
-    0
-  );
+  const totalAmountCarT = cartItems.reduce((acc, item) => acc + item.price, 0);
+  const totalAmountCart = totalAmountCarT.toFixed(2)
+  const totalAmountWishLisT = wishlistitem.reduce((acc, item) => acc + item.price,0);
+  const totalAmountWishList = totalAmountWishLisT.toFixed(2)
 
   const sortedItems = [...(view === "cart" ? cartItems : wishlistitem)].sort(
     (a, b) => {
@@ -46,6 +47,10 @@ const Dashboard = () => {
   return (
     <div>
       {/* Heading Description */}
+      <Helmet>
+        <title>DeshBoard</title>
+        <meta name="description" content="Helmet application" />
+      </Helmet>
       <div className="bg-purple-500 max-w-screen-xl mx-auto rounded-xl">
         <div className="text-center md:w-2/3 mx-auto space-y-4 py-9 ">
           <h2 className="text-4xl font-semibold text-white">Dashboard</h2>
@@ -93,15 +98,17 @@ const Dashboard = () => {
 
             onClick={() => setSortBy("price")}
             
-            className="border rounded-full px-4 bg-white  text-purple-600 border-purple-700 font-semibold py-1"
+            className="border rounded-full px-4  bg-white  text-purple-600 border-purple-700 font-semibold py-1"
           >
             sort by Price
+            <i class="fa-solid mx-2 ml-2 rotate-90 fa-sliders"></i>
           </button>
           <button
             onClick={() => setSortBy("rating")}
             className="border rounded-full px-4 bg-white  text-purple-600 border-purple-700 font-semibold py-1"
           >
             sort by Rating
+            <i class="fa-solid ml-2 rotate-90 fa-sliders"></i>
           </button>
 
           {/* Modal start */}
@@ -147,9 +154,10 @@ const Dashboard = () => {
           {/* purchase বাটনে click korle কিছু হবে */}
           <button
             onClick={handlePurchaseClick}
-            className="border rounded-full px-4 bg-gradient-to-r from-pink-500 to-purple-500  text-black  font-semibold py-1"
+            className="border rounded-full px-4 bg-gradient-to-r from-pink-500 to-purple-500  text-white  font-semibold py-1"
           >
             Purchase
+            
           </button>
         </div>
       </div>

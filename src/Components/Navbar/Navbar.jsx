@@ -15,7 +15,7 @@ const Navbar = () => {
   return (
     
    <>
-    <div  style={navColor} className="navbar max-w-screen-xl mx-auto px-8 w-full py-5 backdrop-blur-xl bg-white/30 sticky z-50 top-0">
+    <div  style={navColor} className="navbar max-w-screen-xl mx-auto px-8 w-full f py-5 backdrop-blur-xl bg-white/30 sticky z-50 top-0">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -104,6 +104,16 @@ const Navbar = () => {
             to={"/dashboard"}
           >
             DeshBoard
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              `mr-4 font-bold ${
+                isActive ? "text-purple-600 font-bold underline" : "text-black"
+              }`
+            }
+            to={"/login"}
+          >
+            login
           </NavLink>
         </ul>
       </div>
