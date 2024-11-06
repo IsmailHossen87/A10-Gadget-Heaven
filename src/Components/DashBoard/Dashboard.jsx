@@ -3,6 +3,7 @@ import { CartContext } from "../../Hooks/ContExt";
 import DeshBoardCard from "../DeshBoardCard/DeshBoardCard";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import modalImage from '../../assets/Group.png';
 
 const Dashboard = () => {
   const { cartItems, wishlistitem, clearLocalStorage, clearLocalStorageWish } =
@@ -21,8 +22,10 @@ const Dashboard = () => {
     (a, b) => {
       if (sortBy === "price") {
         return b.price - a.price;
+       
       }
       if (sortBy === "rating") {
+
         return b.rating - a.rating;
       }
       return 0;
@@ -32,7 +35,7 @@ const Dashboard = () => {
   const handlePurchaseClick = () => {
     // যদি ডাটা না থাকে তাহলে মডাল দখাবে না
     if (cartItems.length === 0 && wishlistitem.length === 0) {
-      toast.warning('No items in cart or wishlist to purchase!"', {
+      toast.warn('No items in cart available!', {
         position: "top-center",
         autoClose: 1200,
       });
@@ -87,7 +90,9 @@ const Dashboard = () => {
         </div>
         <div className="flex space-x-4">
           <button
+
             onClick={() => setSortBy("price")}
+            
             className="border rounded-full px-4 bg-white  text-purple-600 border-purple-700 font-semibold py-1"
           >
             sort by Price
@@ -102,9 +107,10 @@ const Dashboard = () => {
           {/* Modal start */}
           <dialog id="my_modal_1" className="modal">
             <div className="modal-box">
+            <div className="flex justify-center"><img src={modalImage} alt="" /></div>
+            {" "}
               <h3 className="font-bold text-2xl">Payment Successfully</h3>
               <div className="w-2/3 mx-auto my-2">
-                {" "}
                 <hr />
               </div>
               <div className="mt-4">
@@ -141,7 +147,7 @@ const Dashboard = () => {
           {/* purchase বাটনে click korle কিছু হবে */}
           <button
             onClick={handlePurchaseClick}
-            className="border rounded-full px-4 bg-white text-purple-600 border-purple-700 font-semibold py-1"
+            className="border rounded-full px-4 bg-gradient-to-r from-pink-500 to-purple-500  text-black  font-semibold py-1"
           >
             Purchase
           </button>

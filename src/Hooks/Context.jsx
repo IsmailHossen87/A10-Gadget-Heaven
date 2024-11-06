@@ -71,11 +71,19 @@ const clearLocalStorageWish = () => {
         const updatedCart = cartItems.filter(item => item.product_id !== id);
         setCartItems(updatedCart);
         localStorage.setItem('cart', JSON.stringify(updatedCart)); 
+        toast.warning('Delete the item!',{
+            position:'top-center',
+            autoClose:1200
+          })
     };
     const removeFromwish = (id) => {
         const updatedCart = wishlistitem.filter(item => item.product_id !== id);
         setWishlistItem(updatedCart);
         localStorage.setItem('wishList', JSON.stringify(updatedCart)); 
+        toast.warning('Delete the item!',{
+            position:'top-center',
+            autoClose:1200
+          })
     };
 
     const cartCount = cartItems.length;

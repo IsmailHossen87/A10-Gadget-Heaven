@@ -3,25 +3,26 @@ import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
 import Cards from '../Cards/Cards';
 
 const CategoryCard = () => {
-    const datas = useLoaderData()
+    const data = useLoaderData()
     const {category} = useParams()
-    // console.log("datas",datas ,"category",category)
 
-    const [allCards,setAllcard]= useState([])
-    useEffect(()=>{
-       if(category){
-        const storecard= [...datas].filter(data => data.category_name === category)
-        setAllcard(storecard)
-       }else{
-        setAllcard(datas.slice(0,6))
-       }
-    },[datas,category])
+const [disPlayCard,setDisplayCard] = useState([])
+useEffect(()=>{
+    if(!category){
+        setDisplayCard(data.slice(0,6))
+    }else if(category === 'all'){
+        setDisplayCard(data)
+    }else{
+        setDisplayCard(data.filter(item => item.category_name == category))
+    }
+},[category,data])
+
     return (
        <>
         <div className='container mx-auto'>
             <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-3 my-4'>
                 {
-                    allCards.map(data => <Cards data={data}></Cards>)
+                    disPlayCard.map(data => <Cards data={data}></Cards>)
                 }
             </div>
         </div>

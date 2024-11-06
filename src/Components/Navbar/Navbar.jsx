@@ -1,18 +1,21 @@
 import React, { useContext, useEffect, useState } from "react";
-import {  NavLink } from "react-router-dom";
+import {  Link, NavLink, useLoaderData, useLocation } from "react-router-dom";
 // import { getStoreCart } from "../Utility/dataStore";
 import { CartContext } from "../../Hooks/ContExt";
 
 const Navbar = () => {
   const { cartCount ,wishListCount} = useContext(CartContext);
-  // const [totalData,setdata]= useState([])
-  // useEffect(()=>{
-  //   const storeData = getStoreCart();
-  //   setdata(storeData)
-  // },[])
+  const location = useLocation();
+  const navColor = {
+    backgroundColor:location.pathname === "/" ? "rgb(168, 85, 247)": "white",
+    color:location.pathname === "/" ? "white" : "",
+    borderRadius: location.pathname === "/" ? "8px 8px 0 0" : '',
+  };
 
   return (
-    <div className="navbar max-w-screen-xl mx-auto px-8 w-full backdrop-blur-xl bg-white/30 sticky z-50 top-0">
+    
+   <>
+    <div  style={navColor} className="navbar max-w-screen-xl mx-auto px-8 w-full py-5 backdrop-blur-xl bg-white/30 sticky z-50 top-0">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -37,7 +40,7 @@ const Navbar = () => {
           >
             <NavLink
               className={({ isActive }) =>
-                `font-bold ${isActive ? "text-purple-600 font-bold underline" : ""}`
+                `font-bold ${isActive ? "text-purple-600 font-bold black underline" : ""}`
               }
               to={"/"}
             >
@@ -45,7 +48,7 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               className={({ isActive }) =>
-                `font-bold ${isActive ? "text-purple-600 font-bold underline" : ""}`
+                `font-bold ${isActive ? "text-purple-600 font-bold underline" : "text-black"}`
               }
               to={"/statics"}
             >
@@ -53,7 +56,7 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               className={({ isActive }) =>
-                `font-bold ${isActive ? "text-purple-600 font-bold underline" : ""}`
+                `font-bold ${isActive ? "text-purple-600 font-bold underline" : "text-black"}`
               }
               to={"/dashboard"}
             >
@@ -75,7 +78,7 @@ const Navbar = () => {
           <NavLink
             className={({ isActive }) =>
               `mr-4 font-bold ${
-                isActive ? "text-purple-600 font-bold underline" : ""
+                isActive ? " font-bold underline" : "white"
               }`
             }
             to={"/"}
@@ -85,7 +88,7 @@ const Navbar = () => {
           <NavLink
             className={({ isActive }) =>
               `mr-4 font-bold ${
-                isActive ? "text-purple-600 font-bold underline " : ""
+                isActive ? "text-purple-600 font-bold underline " : "text-black"
               }`
             }
             to={"/statics"}
@@ -95,7 +98,7 @@ const Navbar = () => {
           <NavLink
             className={({ isActive }) =>
               `mr-4 font-bold ${
-                isActive ? "text-purple-600 font-bold underline" : ""
+                isActive ? "text-purple-600 font-bold underline" : "text-black"
               }`
             }
             to={"/dashboard"}
@@ -106,16 +109,17 @@ const Navbar = () => {
       </div>
       <div className="navbar-end flex gap-3">
         <div className="reletive">
-           <i class="fa-solid border p-3 rounded-full bg-white fa-cart-shopping"></i>
-           <p className="absolute -top-4 right-20   border p-1 rounded-full ">{cartCount}</p>
+          <Link to={'/dashboard'}> <i class="fa-solid border p-3 rounded-full fa-cart-shopping"></i></Link>
+           <p className="absolute -top-0 right-20  text-black border p-1 rounded-full ">{cartCount}</p>
           </div>
         <div className="relatibe"> 
-          <i class="fa-regular border p-3 rounded-full bg-white fa-heart"></i>
-          <p className="absolute -top-4 right-7  border p-1 rounded-full">{wishListCount}</p>
+            <Link to={'/dashboard'}>  <i class="fa-regular border p-3 rounded-full  fa-heart"></i></Link>
+          <p className="absolute -top-0 right-4  border text-black p-1 rounded-full">{wishListCount}</p>
           </div>
        
       </div>
     </div>
+   </>
   );
 };
 

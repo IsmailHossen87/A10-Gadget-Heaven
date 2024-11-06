@@ -22,7 +22,7 @@ const CardDetails = () => {
   } = newData;
   //   set data localStorage
   const handleAddtoCart = () => {
-    addToCart(newData); // Use the context method to add item to cart
+    addToCart(newData); 
   };
   const handleWishList = () => {
     addToWishList(newData);

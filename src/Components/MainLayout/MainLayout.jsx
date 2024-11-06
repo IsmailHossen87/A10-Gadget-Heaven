@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const MainLayout = () => {
     const navigation = useNavigation()
     return (
-        <div className='-mt-4'>
+        <div className='-mt-8'>
             <ToastContainer></ToastContainer>
            <Navbar></Navbar>
             <div className='max-w-screen-xl mx-auto '>

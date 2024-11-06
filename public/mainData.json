@@ -16,22 +16,6 @@
       "rating": 5
     },
     {
-      "product_id": "103",
-      "product_title": "Noise Cancelling Headphones Z",
-      "product_image": "https://i.ibb.co/942d2rY/Audio1.png",
-      "category_name": "Audio",
-      "price": 199.99,
-      "description": "Premium headphones with active noise cancellation and high-quality sound.",
-      "Specification": [
-        "Over-ear design",
-        "Bluetooth 5.0",
-        "20-hour battery life",
-        "Built-in microphone"
-      ],
-      "availability":"Stock out",
-      "rating": 4.3
-    },
-    {
       "product_id": "104",
       "product_title": "Smartwatch S2",
       "product_image": "https://i.ibb.co/wdLnD1V/Wearables.png",
@@ -126,6 +110,22 @@
       ],
       "availability":"In Stock",
       "rating": 4.2
+    },
+    {
+      "product_id": "103",
+      "product_title": "Noise Cancelling Headphones Z",
+      "product_image": "https://i.ibb.co/942d2rY/Audio1.png",
+      "category_name": "Audio",
+      "price": 199.99,
+      "description": "Premium headphones with active noise cancellation and high-quality sound.",
+      "Specification": [
+        "Over-ear design",
+        "Bluetooth 5.0",
+        "20-hour battery life",
+        "Built-in microphone"
+      ],
+      "availability":"Stock out",
+      "rating": 4.3
     },
     {
       "product_id": "110",
