@@ -10,7 +10,7 @@ const Category = () => {
               to={`/category/${data.category_name}`}
               role="tab"
               className={({ isActive }) =>
-                `tab text-xl mx-6 ${isActive ? "tab-active bg-gray-300 rounded-full font-semibold" : ""}`
+                `tab text-xl mx-6 ${isActive ? "tab-active bg-purple-500 text-white rounded-full font-semibold" : "bg-gray-200 text-black rounded-full"}`
               }
             >
               {data.category_name}

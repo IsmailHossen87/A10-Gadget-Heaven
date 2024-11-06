@@ -10,7 +10,7 @@ const Dashboard = () => {
   const [sortBy, setSortBy] = useState(null);
   const [view, setView] = useState("cart");
 
-// টাকা বের করার জন্য and   // Sort function
+  // টাকা বের করার জন্য and   // Sort function
   const totalAmountCart = cartItems.reduce((acc, item) => acc + item.price, 0);
   const totalAmountWishList = wishlistitem.reduce(
     (acc, item) => acc + item.price,
@@ -29,16 +29,15 @@ const Dashboard = () => {
     }
   );
 
-
   const handlePurchaseClick = () => {
-  // যদি ডাটা না থাকে তাহলে মডাল দখাবে না
+    // যদি ডাটা না থাকে তাহলে মডাল দখাবে না
     if (cartItems.length === 0 && wishlistitem.length === 0) {
-      toast.warning('No items in cart or wishlist to purchase!"',{
-        position:'top-center',
-        autoClose:1200
-      })
+      toast.warning('No items in cart or wishlist to purchase!"', {
+        position: "top-center",
+        autoClose: 1200,
+      });
     } else {
-      my_modal_1.showModal(); 
+      my_modal_1.showModal();
     }
   };
   return (
@@ -75,7 +74,7 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="container flex py-3 items-center  justify-between px-3 mt-5">
+      <div className="container flex py-3 items-center   justify-between px-3 mt-5">
         <h3 className="font-bold text-xl">
           {view === "cart"
             ? `Cart: ${cartItems.length}`
@@ -86,21 +85,20 @@ const Dashboard = () => {
             ? `Total Amount : ${totalAmountCart}`
             : `Total Amount : ${totalAmountWishList}`}
         </div>
-        <div className="flex space-x-4 justify-center">
+        <div className="flex space-x-4">
           <button
             onClick={() => setSortBy("price")}
-            className="btn btn-warning"
+            className="border rounded-full px-4 bg-white  text-purple-600 border-purple-700 font-semibold py-1"
           >
-            Sort by Price
+            sort by Price
           </button>
           <button
             onClick={() => setSortBy("rating")}
-            className="btn btn-warning"
+            className="border rounded-full px-4 bg-white  text-purple-600 border-purple-700 font-semibold py-1"
           >
-            Sort by Rating
+            sort by Rating
           </button>
 
-          
           {/* Modal start */}
           <dialog id="my_modal_1" className="modal">
             <div className="modal-box">
@@ -140,7 +138,7 @@ const Dashboard = () => {
 
           {/* modal end */}
 
-{/* purchase বাটনে click korle কিছু হবে */}
+          {/* purchase বাটনে click korle কিছু হবে */}
           <button
             onClick={handlePurchaseClick}
             className="border rounded-full px-4 bg-white text-purple-600 border-purple-700 font-semibold py-1"

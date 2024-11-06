@@ -7,10 +7,12 @@ import Dashboard from "../DashBoard/Dashboard";
 import Statics from "../Statics/Statics";
 import CategoryCard from "../CategoryCard/CategoryCard";
 import CardDetails from "../CardDetails/CardDetails";
+import Error from "../Error/Error";
 const routers = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement:<Error></Error>,
     children:[
       {
           path:'/',

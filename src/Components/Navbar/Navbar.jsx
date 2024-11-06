@@ -37,7 +37,7 @@ const Navbar = () => {
           >
             <NavLink
               className={({ isActive }) =>
-                `font-bold ${isActive ? "text-warning font-bold underline" : ""}`
+                `font-bold ${isActive ? "text-purple-600 font-bold underline" : ""}`
               }
               to={"/"}
             >
@@ -45,7 +45,7 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               className={({ isActive }) =>
-                `font-bold ${isActive ? "text-warning font-bold underline" : ""}`
+                `font-bold ${isActive ? "text-purple-600 font-bold underline" : ""}`
               }
               to={"/statics"}
             >
@@ -53,7 +53,7 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               className={({ isActive }) =>
-                `font-bold ${isActive ? "text-warning font-bold underline" : ""}`
+                `font-bold ${isActive ? "text-purple-600 font-bold underline" : ""}`
               }
               to={"/dashboard"}
             >
@@ -62,7 +62,7 @@ const Navbar = () => {
           </ul>
         </div>
         <NavLink
-          to={"/"}
+
           className={({ isActive }) =>
             ` ${isActive ? "font-bold text-xl" : ""}`
           }
@@ -75,7 +75,7 @@ const Navbar = () => {
           <NavLink
             className={({ isActive }) =>
               `mr-4 font-bold ${
-                isActive ? "text-warning font-bold underline" : ""
+                isActive ? "text-purple-600 font-bold underline" : ""
               }`
             }
             to={"/"}
@@ -85,7 +85,7 @@ const Navbar = () => {
           <NavLink
             className={({ isActive }) =>
               `mr-4 font-bold ${
-                isActive ? "text-warning font-bold underline " : ""
+                isActive ? "text-purple-600 font-bold underline " : ""
               }`
             }
             to={"/statics"}
@@ -95,7 +95,7 @@ const Navbar = () => {
           <NavLink
             className={({ isActive }) =>
               `mr-4 font-bold ${
-                isActive ? "text-warning font-bold underline" : ""
+                isActive ? "text-purple-600 font-bold underline" : ""
               }`
             }
             to={"/dashboard"}
@@ -107,11 +107,11 @@ const Navbar = () => {
       <div className="navbar-end flex gap-3">
         <div className="reletive">
            <i class="fa-solid border p-3 rounded-full bg-white fa-cart-shopping"></i>
-           <p className="absolute -top-4 right-20 border-2 p-1 rounded-full border-red-500">{cartCount}</p>
+           <p className="absolute -top-4 right-20   border p-1 rounded-full ">{cartCount}</p>
           </div>
         <div className="relatibe"> 
           <i class="fa-regular border p-3 rounded-full bg-white fa-heart"></i>
-          <p className="absolute -top-4 right-7 border-2 p-1 rounded-full border-red-500">{wishListCount}</p>
+          <p className="absolute -top-4 right-7  border p-1 rounded-full">{wishListCount}</p>
           </div>
        
       </div>
